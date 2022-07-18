@@ -5,7 +5,7 @@ the most common cases here. If you have a combination that isn't covered in this
 
 
 ## Sagemath on Linux
-Sagemath is provided by the package managers of most linux distributions. Thus, installing Sagemath is normally as simple as typing something like this in your terminal:
+Sagemath is provided by the package managers of most Linux distributions. Thus, installing Sagemath is normally as simple as typing something like this in your terminal:
 
 ```bash
 sudo apt-get install sagemath # On Debian or Ubuntu
@@ -50,7 +50,113 @@ To install Sagemath:
 Installing Sage on Windows can be a little bit tricky. This is because certain functionalities that Sage depends on aren't necessarily available on Windows.
 The recommended way of getting around this is to use the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about).
 
-To make this process easier, we have written a installation script for you, along with some instructions.
-The script (along with the instructions) can be found [here](https://github.com/joerowell/WSL-for-fplll).
+### Step 1: Installing WSL
+Windows 10 and 11 have the "Windows Subsystem for Linux" (WSL), which essentially installs a Linux virtual machine inside your Windows operating system. This makes it really easy to install Linux packages inside your Windows 
+installation.
+
+#### Part 1: Enabling WSL
+
+To enable WSL, first navigate to Settings.
+
+![Find Settings](./images/settings.png)
+
+Then click on the "Update and Security" icon at the bottom of the page:
+
+![Update and Security](./images/update-and-settings.png)
+
+After, click on "For developers":
+
+![For developers](./images/for-developers.png)
+
+And finally click on "developer mode":
+
+![Developer mode](./images/for-devs.png)
+
+If this is already ticked, then this means that developer mode is already enabled. You can go to Part 2.
+
+As part of this, Windows may ask if you _really_ want to enable developer mode. Click "Yes".
+![Click "Yes](./images/devs-say-yes.png)
+
+#### Part 2: Turning on WSL
+
+Open Powershell as an administrator (by right clicking and selecting "Run as an Administrator"). 
+
+![Powershell](./images/powershell.png)
+
+Copy and paste the following command into Powershell:
+
+```Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```.
 
 
+![Powershell Enable](./images/powershell-enable.png)
+
+Windows may ask you to restart at this point. Type "Y" and let your computer restart. 
+
+#### Part 3: Installing Linux
+
+With this done, we can now install a Linux distribution. There's a few to choose from, but for this
+tutorial we'll choose Ubuntu. 
+
+To install Ubuntu, first open the Microsoft store:
+![Microsoft Store](./images/microsoft-store.png)
+
+Then, search for "Ubuntu":
+![Ubuntu search](./images/ubu-search.png)
+
+Now, install Ubuntu by clicking on the "Ubuntu" icon and clicking "Install". You do not need to select a particular version.
+
+![Ubuntu install](./images/get-ubuntu.png)
+
+Windows may ask if you want to sign-in to a Microsoft account if you haven't already. If you haven't, then you don't need to. 
+
+Once your download has finished, type "Ubuntu" into your search bar and click on the top result. This will finish installing Ubuntu on your device.
+![Ubuntu installs](./images/ubuntu-installs.png)
+
+You should get a prompt that asks you to enter a new "Unix username". You can set whatever you want here. It should also prompt you for a password.
+
+
+The whole process looks like this:
+![Username and password](./images/username-and-password-set.png)
+
+Congratulations! You've now installed Ubuntu and WSL.
+
+#### What if it doesn't prompt me for a password?
+
+Don't worry! You can change the password manually.
+
+To do this, open Powershell again (this time it doesn't need to be as an administrator) and:
+
+- Type ```wsl -u root passwd <username>```, where ```<username>``` is the username of your current user.
+- This will prompt you to change the password. Make sure you remember this password.
+- Type ```exit```.
+
+This looks like this:
+
+![Change password](./images/change-password.png)
+
+### Step 2: Installing Sagemath.
+
+You can now use Ubuntu. If you didn't have to manually set the password, then Ubuntu should already be open for you. Otherwise, you can launch it by typing "Ubuntu" into your search bar and clicking on the top icon as before.
+
+Before you do anything, you'll need to update Ubuntu. To do this, type:
+
+```sudo apt-get update```
+
+
+![Update Ubuntu](./images/update-ubuntu.png)
+
+You can now install sagemath by typing:
+
+```
+sudo apt-get install sagemath
+```
+
+![Install sagemath](./images/sagemath-install.png)
+
+This should then go and install sagemath for you. You can test this by typing ```sage``` in Ubuntu. 
+
+![Sage](./images/Sage.png)
+
+If your installation was successful, then you terminal should look something like this:
+
+![Sage](./images/sage-prompt.png)
