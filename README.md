@@ -1,7 +1,7 @@
 # Installing Sagemath for great good
 This document is meant to provide some brief instructions on how to install Sagemath on your device in preparation for the lattice labs.
 Please note that it's impossible for us to cover all possible combinations of operating systems and hardware: as a result, we only attempt to cover
-the most common cases here. If you have a combination that isn't covered in this document, feel free to reach out to the organisers: we will try our best to help.
+the most common cases here. If you have a combination that isn't covered in this document, feel free to reach out to us: we will try our best to help.
 
 
 ## Sagemath on Linux
@@ -53,6 +53,9 @@ The recommended way of getting around this is to use the [Windows Subsystem for 
 ### Step 1: Installing WSL
 Windows 10 and 11 have the "Windows Subsystem for Linux" (WSL), which essentially installs a Linux virtual machine inside your Windows operating system. This makes it really easy to install Linux packages inside your Windows 
 installation.
+
+#### Part 0: Enabling virtual machines 
+You may need to enable virtualisation in your BIOS / UEFI. This is rather variable across machines, and as a result it is not possible for us to cover this step here. Instead, we recommend that you look up how to do this for your particular machine.
 
 #### Part 1: Enabling WSL
 
