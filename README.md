@@ -1,5 +1,5 @@
 # Installing Sagemath for great good
-This document is meant to provide some brief instructions on how to install Sagemath on your device in preparation for the lattice labs.
+This document is meant to provide some brief instructions on how to install Sagemath on your device in preparation for the labs.
 Please note that it's impossible for us to cover all possible combinations of operating systems and hardware: as a result, we only attempt to cover
 the most common cases here. If you have a combination that isn't covered in this document, feel free to reach out to us: we will try our best to help.
 
